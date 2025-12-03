@@ -1,2 +1,8 @@
 # Nyumba-Hunt
-Nyumba-Hunt is a web application that helps tenants easily find and book vacant rental houses online. Instead of physically walking around in search of available houses which is frustrating and hectic, tenants can browse listings, view details, and make booking requests of houses that meet their standards directly from their phone or computer.
+
+Nyumba-Hunt is a housing marketplace that allows tenants to find vacant rental houses and book them instantly without physically walking around.
+
+Landlords can list their houses(if it is a bed-sitter,single room,one bedroom, 2 bedroom etc),location of their houses,upload photos, set prices and mark houses as Vacant or Occupied, ensuring that tenants only book houses that are truly available.
+
+Built with Django, Bootstrap, and HTML, Nyumba-Hunt provides a modern, efficient, and user-friendly solution for both tenants and landlords.
+
