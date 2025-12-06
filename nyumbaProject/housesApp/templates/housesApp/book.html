@@ -1,0 +1,10 @@
+{% extends 'housesApp/base.html' %}
+{% block content %}
+  <h2>Book: {{ house.title }}</h2>
+
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Confirm Booking</button>
+  </form>
+{% endblock %}
