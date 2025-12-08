@@ -1,0 +1,21 @@
+{% extends "housesApp/base.html" %}
+{% load static %}
+{% block content %}
+
+<h2 class="text-center mb-4">Login to Nyumba Hunt</h2>
+
+<div class="content-box">
+    <form method="post" class="p-3">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button class="btn btn-primary w-100 mt-3">Login</button>
+    </form>
+
+    <p class="text-center mt-3">
+        Don't have an account?
+        <a href="{% url 'housesApp:register' %}">Register here</a>
+    </p>
+</div>
+
+{% endblock %}

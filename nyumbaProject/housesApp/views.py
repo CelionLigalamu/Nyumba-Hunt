@@ -43,7 +43,7 @@ def book_house(request, pk):
     context = {'house': house, 'form': form}
     return render(request, 'housesApp/book.html', context)
 
-"""
+
 def login_user(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -54,8 +54,8 @@ def login_user(request):
             return redirect('home') 
         else:
             messages.error(request, 'Invalid credentials')
-    return render(request, 'houses/login.html')
-"""
+    return render(request, 'housesApp/login.html')
+
 def register_user(request):
    if request.method == 'POST':
         form = UserRegistrationForm(request.POST)  

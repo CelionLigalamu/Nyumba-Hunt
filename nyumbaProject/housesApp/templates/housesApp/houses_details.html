@@ -1,20 +1,24 @@
 {% extends 'housesApp/base.html' %}
+{% load static %}
 {% block content %}
-  <div class="row">
-    <div class="col-md-7">
-      <img src="{{ house.image.url }}" class="img-fluid rounded" alt="{{ house.title }}">
-    </div>
-    <div class="col-md-5">
-      <h2>{{ house.title }}</h2>
-      <p class="text-muted">{{ house.location }}</p>
-      <p>{{ house.description }}</p>
-      <p class="fw-bold">Ksh {{ house.price }}</p>
 
-      {% if house.status == 'vacant' %}
-        <a href="{% url 'housesApp:book_house' house.pk %}" class="btn btn-success">Book Now</a>
-      {% else %}
-        <button class="btn btn-secondary" disabled>Already Booked</button>
-      {% endif %}
+<h3>{{ house.title }}</h3>
+
+<div class="row">
+    <div class="col-md-6">
+        {% if house.image %}
+        <img src="{{ house.image.url }}" class="img-fluid rounded">
+        {% endif %}
     </div>
-  </div>
+
+    <div class="col-md-6">
+        <h5>Location: {{ house.location }}</h5>
+        <h5>Price: Ksh {{ house.price }}</h5>
+        <p>{{ house.description }}</p>
+
+        <a href="{% url 'housesApp:book_house' house.pk %}"
+           class="btn btn-success w-100">Book Now</a>
+    </div>
+</div>
+
 {% endblock %}
