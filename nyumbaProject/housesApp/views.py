@@ -1,7 +1,7 @@
-from django.shortcuts import render, get_object_or_404,redirect
-from django.contrib.auth import login, authenticate
-from django.contrib.auth.decorators import login_required
-from django.contrib import messages
+from django.shortcuts import render, get_object_or_404,redirect # type: ignore
+from django.contrib.auth import login, authenticate # type: ignore
+from django.contrib.auth.decorators import login_required # pyright: ignore[reportMissingModuleSource]
+from django.contrib import messages # type: ignore
 from .models import House, Booking
 from .forms import BookingForm, UserRegistrationForm  
 
@@ -16,7 +16,7 @@ def home(request):
 def house_detail(request, pk):
     house = get_object_or_404(House, pk=pk)
     context = {'house': house}
-    return render(request, 'housesApp/house_detail.html', context)
+    return render(request, 'housesApp/houses_details.html', context)
 
 """
 Allow a logged-in user to book a vacant house.
