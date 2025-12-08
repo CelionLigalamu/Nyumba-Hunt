@@ -1,10 +1,12 @@
 {% extends 'housesApp/base.html' %}
+{% load static %}
 {% block content %}
-  <h2>Book: {{ house.title }}</h2>
+<h3>Book House: {{ house.title }}</h3>
 
-  <form method="post">
+<form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Confirm Booking</button>
-  </form>
+
+    <button class="btn btn-success w-100 mt-3">Submit Booking</button>
+</form>
 {% endblock %}

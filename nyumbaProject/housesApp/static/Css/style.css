@@ -1,0 +1,30 @@
+
+body {
+    background-image: url("../nyumbaProject\housesApp\static\images\pexels-expect-best-79873-323780 (1).jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.navbar-brand img {
+    height: 45px;
+    width: auto;
+}
+
+
+.house-card {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+
+.content-box {
+    background: rgba(255,255,255,0.85);
+    padding: 25px;
+    border-radius: 12px;
+    margin-top: 30px;
+}
