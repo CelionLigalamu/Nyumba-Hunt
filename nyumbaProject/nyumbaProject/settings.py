@@ -55,7 +55,7 @@ ROOT_URLCONF = 'nyumbaProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,7 +121,25 @@ STATICFILES_DIRS=[
 ]
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
+# Media files (User uploads)
+import os
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Login settings
+LOGIN_URL = 'housesApp:login'
+LOGIN_REDIRECT_URL = 'housesApp:home'
+LOGOUT_REDIRECT_URL = 'housesApp:home'
+
+# M-Pesa Daraja Settings
+MPESA_ENVIRONMENT = 'sandbox' 
+MPESA_BUSINESS_SHORT_CODE = '174379' 
+MPESA_CONSUMER_KEY = 'uqapRtNQY3TjkEf03evE0u9cTKeZjqaDQsGXmk4U1HSUaLSl' 
+MPESA_CONSUMER_SECRET = 'fzQdooUO6DNQMVjsnc7TnEfCpId8UNqJLEArFGARVEedcwk80AauF0wUImmDX6mO' 
+MPESA_PASSKEY = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919'  
+MPESA_CALLBACK_URL = 'http://localhost:8000/mpesa/callback/'

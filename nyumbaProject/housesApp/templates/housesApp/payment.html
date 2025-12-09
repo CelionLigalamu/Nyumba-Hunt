@@ -1,0 +1,54 @@
+{% extends "housesApp/base.html" %}
+{% load static %}
+{% block content %}
+
+<h2 class="text-center mb-4">Complete Payment</h2>
+
+<div class="row justify-content-center">
+  <div class="col-md-6 col-lg-5">
+    <div class="content-box glass-card">
+      <div class="mb-4 p-3 bg-light rounded">
+        <h5 class="mb-1">{{ booking.house.title }}</h5>
+        <p class="text-muted mb-0">{{ booking.house.location }}</p>
+        <hr>
+        <div class="d-flex justify-content-between align-items-center">
+          <span>Amount to Pay:</span>
+          <h4 class="mb-0 text-primary">Ksh {{ amount }}</h4>
+        </div>
+      </div>
+
+      <form method="post" class="p-3">
+        {% csrf_token %}
+
+        <div class="mb-3">
+          <label class="form-label"><strong>M-Pesa Phone Number</strong></label>
+          {{ form.phone_number }}
+          {% if form.phone_number.errors %}
+            <div class="text-danger small mt-1">{{ form.phone_number.errors|striptags }}</div>
+          {% endif %}
+          <small class="text-muted d-block mt-2">{{ form.phone_number.help_text }}</small>
+        </div>
+
+        <div class="alert alert-info">
+          <strong>How it works:</strong>
+          <ul class="mb-0 mt-2">
+            <li>Enter your M-Pesa phone number</li>
+            <li>Click "Pay with M-Pesa"</li>
+            <li>You'll receive a prompt on your phone</li>
+            <li>Enter your M-Pesa PIN to complete payment</li>
+          </ul>
+        </div>
+
+        <button class="btn btn-success w-100" type="submit">
+          <i class="bi bi-phone"></i> Pay with M-Pesa
+        </button>
+      </form>
+
+      <p class="text-center mt-3 mb-0">
+        <a href="{% url 'housesApp:dashboard' %}">Back to Dashboard</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

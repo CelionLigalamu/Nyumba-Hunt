@@ -8,7 +8,7 @@
     <div class="col-md-4 mb-4">
         <div class="house-card">
             {% if house.image %}
-            <img src="{% static 'images/pexels-binyaminmellish-1396132.jpg' %}" class="img-fluid rounded mb-2">
+            <img src="{{ house.image.url }}" class="img-fluid rounded mb-2">
             {% else %}
             <img src="{% static 'images/pexels-davidmcbee-1546166.jpg' %}" class="img-fluid rounded mb-2">
             {% endif %}

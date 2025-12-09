@@ -1,30 +1,79 @@
 
 body {
-    background-image: url("../nyumbaProject\housesApp\static\images\pexels-expect-best-79873-323780 (1).jpg");
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
 }
 
 
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    color: #fff !important;
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
 .navbar-brand img {
     height: 45px;
-    width: auto;
+    width: 45px;
+    filter: brightness(0) invert(1);
+    background: rgba(255,255,255,0.1);
+    padding: 5px;
+    border-radius: 8px;
 }
 
 
 .house-card {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 15px;
     padding: 15px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.house-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
 }
 
 
 .content-box {
-    background: rgba(255,255,255,0.85);
+    background: rgba(255,255,255,0.95);
     padding: 25px;
     border-radius: 12px;
     margin-top: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+h2, h3, h5, p {
+    color: #333;
+}
+
+/* Form styling for auth pages */
+.content-box input,
+.content-box select,
+.content-box textarea {
+    border-radius: 10px;
+    padding: 12px 14px;
+    border: 1px solid #d9d9d9;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+    width: 100%;
+}
+
+.content-box .btn {
+    border-radius: 10px;
+    padding: 12px;
+    font-weight: 600;
+}
+
+.glass-card {
+    background: rgba(255,255,255,0.9);
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.4);
 }

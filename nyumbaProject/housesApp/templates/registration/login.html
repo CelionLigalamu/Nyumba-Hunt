@@ -1,0 +1,36 @@
+{% extends "housesApp/base.html" %}
+{% load static %}
+{% block content %}
+
+<h2 class="text-center mb-4">Login to Nyumba Hunt</h2>
+
+<div class="content-box">
+    <form method="post" class="p-3">
+        {% csrf_token %}
+        
+        {% if form.errors %}
+            <div class="alert alert-danger">
+                <p>Invalid username or password. Please try again.</p>
+            </div>
+        {% endif %}
+
+        <div class="mb-3">
+            <label for="id_username" class="form-label">Username</label>
+            <input type="text" name="username" class="form-control" id="id_username" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="id_password" class="form-label">Password</label>
+            <input type="password" name="password" class="form-control" id="id_password" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 mt-3">Login</button>
+    </form>
+
+    <p class="text-center mt-3">
+        Don't have an account?
+        <a href="{% url 'housesApp:register' %}">Register here</a>
+    </p>
+</div>
+
+{% endblock %}
